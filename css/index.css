@@ -25,7 +25,7 @@ button {
 	height:16px;
 	border:none;
 	cursor:pointer;
-	background:transparent url('buttons.png') no-repeat 0 0;
+	background:transparent url('../img/buttons.png') no-repeat 0 0;
 }
 
 .pause { background-position:-19px 0; }
