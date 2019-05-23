@@ -1,36 +1,28 @@
-<!DOCTYPE HTML>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Canvas demo</title>
-<style type="text/css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Media Player using HTML5's Media API</title>
+  <link href='css/index.css' rel='stylesheet' />
+  <style type="text/css">
     #canvasSection{ position:fixed;}
-</style>
-<script type="text/javascript">
-function draw()
-{
-
-//paint the text
-var canvas = document.getElementById('canvasSection');
-var context = canvas.getContext('2d');
-
-context.fillStyle    = '#00f';
-context.font         = 'italic 30px sans-serif';
-context.textBaseline = 'top';
-context.font         = 'bold 30px sans-serif';
-context.strokeText('Your Text!!', 0, 0);
-
-//paint the square
-
-var canvasSquare = document.getElementById('canvasSquare');
-var ctxSquare = canvas.getContext('2d');
-
-ctxSquare.fillStyle='#FF0000';
-ctxSquare.fillRect(0, 100,50,100);
-}
-</script>
+  </style>
+  <script src='js/media-payer.js'></script>
 </head>
-<body onLoad="draw()">
-<canvas id="canvasSection">Error, canvas is not supported</canvas>
-<div>TestText</div>
+<body>
+<h1>Lets get Player using HTML5's Media API</h1>
+<div id='media-player'>
+  <video id='media-video' controls>
+    <source src='https://www.youtube.com/embed/mwENYk66q6M' type='video/mp4'>
+  </video>
+  <div id='media-controls'>
+    <progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
+    <button id='replay-button' class='replay' title='replay' onclick='replayMedia();'>Replay</button>
+    <button id='play-pause-button' class='play' title='play' onclick='togglePlayPause();'>Play</button>
+    <button id='stop-button' class='stop' title='stop' onclick='stopPlayer();'>Stop</button>
+    <button id='volume-inc-button' class='volume-plus' title='increase volume' onclick='changeVolume("+");'>Increase volume</button>
+    <button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Decrease volume</button>
+    <button id='mute-button' class='mute' title='mute' onclick='toggleMute("true");'>Mute</button>
+  </div>
+</div>
 </body>
 </html>
