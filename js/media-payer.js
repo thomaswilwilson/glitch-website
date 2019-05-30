@@ -34,14 +34,22 @@ function initialiseMediaPlayer() {
 		changeButtonType(playPauseBtn, 'play');
 		}, false);
 
-		mediaPlayers[i].addEventListener('volumechange', function() {
-		if (mediaPlayers[0].muted) {
+		mediaPlayers[i].addEventListener('mute', function () {
 			changeButtonType(muteBtn, 'unmute');
-		}
-		else {
-			changeButtonType(muteBtn, 'mute');
-		}
 		}, false);
+
+		mediaPlayers[i].addEventListener('unmute', function () {
+			changeButtonType(muteBtn, 'mute');
+		}, false);
+
+		// mediaPlayers[i].addEventListener('volumechange', function() {
+		// if (mediaPlayers[0].muted) {
+		// 	changeButtonType(muteBtn, 'unmute');
+		// }
+		// else {
+		// 	changeButtonType(muteBtn, 'mute');
+		// }
+		// }, false);
 
 		mediaPlayers[i].addEventListener('ended', function() { this.pause(); }, false);
 
