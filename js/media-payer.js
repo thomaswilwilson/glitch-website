@@ -53,7 +53,7 @@ function initialiseMediaPlayer() {
 
 function togglePlayPause() {
 	// If the mediaPlayer is currently paused or has ended
-	if (mediaPlayers[0].paused || mediaPlayer[0].ended) {
+	if (mediaPlayers[0].paused || mediaPlayers[0].ended) {
 		// Change the button to be a pause button
 		changeButtonType(playPauseBtn, 'pause');
 		// Play the media
