@@ -9,9 +9,6 @@
 </head>
 <body>
 <h1>media Art and Design Practice</h1>
-<span class='mover'>
-  <video class='video' id='media-video' src='img/cat.mp4' controls>  </video>
-</span>
 <div id='media-controls'>
   <progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
   <button id='replay-button' class='replay' title='replay' onclick='replayMedia();'>Replay</button>
@@ -21,6 +18,10 @@
   <button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Decrease volume</button>
   <button id='mute-button' class='mute' title='mute' onclick='toggleMute("true");'>Mute</button>
 </div>
+<span class='mover'>
+  <video class='video' id='media-video' src='img/cat.mp4' controls>  </video>
+</span>
+
 
 <span class='mover'>
   <video class='video' id='media-video' src='img/cat.mp4' controls>  </video>
