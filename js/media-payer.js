@@ -35,7 +35,7 @@ function initialiseMediaPlayer() {
 		}, false);
 
 		mediaPlayers[i].addEventListener('volumechange', function() {
-		if (mediaPlayers[i].muted) {
+		if (mediaPlayers[0].muted) {
 			changeButtonType(muteBtn, 'unmute');
 		}
 		else {
