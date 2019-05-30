@@ -16,40 +16,38 @@ var muteBtn;
 var progressBar;
 
 function initialiseMediaPlayer() {
-	// Get a handle to the player
 	mediaPlayers = document.getElementsByClassName("video");
-	// Get handles to each of the buttons and required elements
 	playPauseBtn = document.getElementById('play-pause-button');
 	muteBtn = document.getElementById('mute-button');
 	progressBar = document.getElementById('progress-bar');
-
-	// Hide the browser's default controls
 	for(var i=0; i<mediaPlayers.length; i++) {
+
     mediaPlayers[i].controls = false;
+
 		mediaPlayers[i].addEventListener('timeupdate', updateProgressBar, false);
 
-	// Add a listener for the timeupdate event so we can update the progress bar
-
-
-	// Add a listener for the play and pause events so the buttons state can be updated
-	mediaPlayers[i].addEventListener('play', function() {
-		// Change the button to be a pause button
+		mediaPlayers[i].addEventListener('play', function() {
 		changeButtonType(playPauseBtn, 'pause');
-	}, false);
-	mediaPlayers[i].addEventListener('pause', function() {
-		// Change the button to be a play button
+		}, false);
+
+		mediaPlayers[i].addEventListener('pause', function() {
 		changeButtonType(playPauseBtn, 'play');
 		}, false);
 
-	// need to work on this one more...how to know it's muted?
-// 	mediaPlayers[i].addEventListener('volumechange', function() {
-// 		// Update the button to be mute/unmute
-// 		if (mediaPlayers[i].muted) changeButtonType(muteBtn, 'unmute');
-// 		else changeButtonType(muteBtn, 'mute');
-// 	}, false);
-	mediaPlayers[i].addEventListener('ended', function() { this.pause(); }, false);
+		mediaPlayers[i].addEventListener('volumechange', function() {
+		if (mediaPlayers[i].muted) {
+			changeButtonType(muteBtn, 'unmute');
+		}
+		else {
+			changeButtonType(muteBtn, 'mute');
+		}
+		}, false);
+
+		mediaPlayers[i].addEventListener('ended', function() { this.pause(); }, false);
+
+	}
 }
-}
+
 
 function togglePlayPause() {
 	// If the mediaPlayer is currently paused or has ended
