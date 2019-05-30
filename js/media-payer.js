@@ -81,8 +81,10 @@ function changeVolume(direction) {
 		}
 	}
 	else {
-		mediaPlayers[i].volume -= (mediaPlayers[i].volume == 0 ? 0 : 0.1);
-		mediaPlayers[i].volume = parseFloat(mediaPlayers[i].volume).toFixed(1);
+		for(var i=0; i<mediaPlayers[i].length; i++) {
+			mediaPlayers[i].volume -= (mediaPlayers[i].volume == 0 ? 0 : 0.1);
+			mediaPlayers[i].volume = parseFloat(mediaPlayers[i].volume).toFixed(1);
+		}
 	}
 }
 
