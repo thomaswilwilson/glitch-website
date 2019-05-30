@@ -40,7 +40,7 @@ function initialiseMediaPlayer() {
 		// Change the button to be a play button
 		changeButtonType(playPauseBtn, 'play');
 		}, false);
-	
+
 	// need to work on this one more...how to know it's muted?
 // 	mediaPlayers[i].addEventListener('volumechange', function() {
 // 		// Update the button to be mute/unmute
@@ -48,6 +48,7 @@ function initialiseMediaPlayer() {
 // 		else changeButtonType(muteBtn, 'mute');
 // 	}, false);
 	mediaPlayers[i].addEventListener('ended', function() { this.pause(); }, false);
+}
 }
 
 function togglePlayPause() {
