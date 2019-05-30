@@ -76,6 +76,7 @@ function stopPlayer() {
 	for(var i=0; i<mediaPlayers.length; i++) {
 		mediaPlayer[i].pause();
 		mediaPlayer[i].currentTime = 0;
+	}
 }
 //
 // // Changes the volume on the media player
