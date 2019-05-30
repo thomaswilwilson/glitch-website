@@ -107,14 +107,14 @@ function toggleMute() {
 		}
 	}
 }
-//
-// // Replays the media currently loaded in the player
-// function replayMedia() {
-// 	resetPlayer();
-// 	mediaPlayer.play();
-// }
-//
-// // Update the progress bar
+
+function replayMedia() {
+	resetPlayer();
+	for(var i=0; i<mediaPlayers.length; i++) {
+		mediaPlayer.play();
+	}
+}
+
 function updateProgressBar() {
 	// Work out how much of the media has played via the duration and currentTime parameters
 	var percentage = Math.floor((100 / mediaPlayers[0].duration) * mediaPlayers[0].currentTime);
@@ -154,12 +154,10 @@ function changeButtonType(btn, value) {
 // 	else return true;
 // }
 //
-// // Resets the media player
-// function resetPlayer() {
-// 	// Reset the progress bar to 0
-// 	progressBar.value = 0;
-// 	// Move the media back to the start
-// 	mediaPlayer.currentTime = 0;
-// 	// Ensure that the play pause button is set as 'play'
-// 	changeButtonType(playPauseBtn, 'play');
- // }
+function resetPlayer() {
+	for(var i=0; i<mediaPlayers.length; i++) {
+		mediaPlayers[i].currentTime = 0;
+	}
+	progressBar.value = 0;
+	changeButtonType(playPauseBtn, 'play');
+ }
