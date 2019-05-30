@@ -119,11 +119,11 @@ function stopPlayer() {
 // }
 //
 // // Updates a button's title, innerHTML and CSS class to a certain value
-// function changeButtonType(btn, value) {
-// 	btn.title = value;
-// 	btn.innerHTML = value;
-// 	btn.className = value;
-// }
+function changeButtonType(btn, value) {
+	btn.title = value;
+	btn.innerHTML = value;
+	btn.className = value;
+}
 //
 // // Loads a video item into the media player
 // function loadVideo() {
