@@ -74,8 +74,8 @@ function togglePlayPause() {
 // // Stop the current media from playing, and return it to the start position
 function stopPlayer() {
 	for(var i=0; i<mediaPlayers.length; i++) {
-		mediaPlayer[i].pause();
-		mediaPlayer[i].currentTime = 0;
+		mediaPlayers[i].pause();
+		mediaPlayers[i].currentTime = 0;
 	}
 }
 //
