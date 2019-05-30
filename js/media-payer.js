@@ -26,7 +26,7 @@ function initialiseMediaPlayer() {
 	// Hide the browser's default controls
 	for(var i=0; i<mediaPlayers.length; i++) {
     mediaPlayers[i].controls = false;
-		// mediaPlayers[i].addEventListener('timeupdate', updateProgressBar, false);
+		mediaPlayers[i].addEventListener('timeupdate', updateProgressBar, false);
 
 	// Add a listener for the timeupdate event so we can update the progress bar
 
@@ -42,13 +42,13 @@ function initialiseMediaPlayer() {
 		}, false);
 	}
 	// need to work on this one more...how to know it's muted?
-	mediaPlayers[i].addEventListener('volumechange', function() {
-		// Update the button to be mute/unmute
-		if (mediaPlayers[i].muted) changeButtonType(muteBtn, 'unmute');
-		else changeButtonType(muteBtn, 'mute');
-	}, false);
+// 	mediaPlayers[i].addEventListener('volumechange', function() {
+// 		// Update the button to be mute/unmute
+// 		if (mediaPlayers[i].muted) changeButtonType(muteBtn, 'unmute');
+// 		else changeButtonType(muteBtn, 'mute');
+// 	}, false);
 	mediaPlayers[i].addEventListener('ended', function() { this.pause(); }, false);
-}
+// }
 
 function togglePlayPause() {
 	// If the mediaPlayer is currently paused or has ended
@@ -80,17 +80,17 @@ function stopPlayer() {
 }
 //
 // Changes the volume on the media player
-function changeVolume(direction) {
-	if (direction === '+') {
-		for(var i=0; i<mediaPlayers.length; i++) {
-			mediaPlayers[i].volume += mediaPlayers[i].volume == 1 ? 0 : 0.1;
-		}
-	}
-	else {
-		mediaPlayers[i].volume -= (mediaPlayers[i].volume == 0 ? 0 : 0.1);
-		mediaPlayers[i].volume = parseFloat(mediaPlayers[i].volume).toFixed(1);
-	}
-}
+// function changeVolume(direction) {
+// 	if (direction === '+') {
+// 		for(var i=0; i<mediaPlayers.length; i++) {
+// 			mediaPlayers[i].volume += mediaPlayers[i].volume == 1 ? 0 : 0.1;
+// 		}
+// 	}
+// 	else {
+// 		mediaPlayers[i].volume -= (mediaPlayers[i].volume == 0 ? 0 : 0.1);
+// 		mediaPlayers[i].volume = parseFloat(mediaPlayers[i].volume).toFixed(1);
+// 	}
+// }
 //
 // // Toggles the media player's mute and unmute status
 // function toggleMute() {
@@ -115,14 +115,14 @@ function changeVolume(direction) {
 // }
 //
 // // Update the progress bar
-// function updateProgressBar() {
-// 	// Work out how much of the media has played via the duration and currentTime parameters
-// 	var percentage = Math.floor((100 / mediaPlayer.duration) * mediaPlayer.currentTime);
-// 	// Update the progress bar's value
-// 	progressBar.value = percentage;
-// 	// Update the progress bar's text (for browsers that don't support the progress element)
-// 	progressBar.innerHTML = percentage + '% played';
-// }
+function updateProgressBar() {
+	// Work out how much of the media has played via the duration and currentTime parameters
+	var percentage = Math.floor((100 / mediaPlayers[0].duration) * mediaPlayers[0].currentTime);
+	// Update the progress bar's value
+	progressBar.value = percentage;
+	// Update the progress bar's text (for browsers that don't support the progress element)
+	progressBar.innerHTML = percentage + '% played';
+}
 //
 // // Updates a button's title, innerHTML and CSS class to a certain value
 function changeButtonType(btn, value) {
