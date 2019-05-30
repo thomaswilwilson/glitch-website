@@ -57,7 +57,7 @@ function togglePlayPause() {
 		changeButtonType(playPauseBtn, 'pause');
 		// Play the media
 		for(var i=0; i<mediaPlayers.length; i++) {
-			mediaPlayer[i].play();
+			mediaPlayers[i].play();
 	  }
 	}
 	// Otherwise it must currently be playing
@@ -66,16 +66,17 @@ function togglePlayPause() {
 		changeButtonType(playPauseBtn, 'play');
 		// Pause the media
 		for(var i=0; i<mediaPlayers.length; i++) {
-			mediaPlayer[i].pause();
+			mediaPlayers[i].pause();
 	  }
 	}
 }
 //
 // // Stop the current media from playing, and return it to the start position
-// function stopPlayer() {
-// 	mediaPlayer.pause();
-// 	mediaPlayer.currentTime = 0;
-// }
+function stopPlayer() {
+	for(var i=0; i<mediaPlayers.length; i++) {
+		mediaPlayer[i].pause();
+		mediaPlayer[i].currentTime = 0;
+}
 //
 // // Changes the volume on the media player
 // function changeVolume(direction) {
