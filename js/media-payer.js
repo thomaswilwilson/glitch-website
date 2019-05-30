@@ -42,15 +42,6 @@ function initialiseMediaPlayer() {
 			changeButtonType(muteBtn, 'mute');
 		}, false);
 
-		// mediaPlayers[i].addEventListener('volumechange', function() {
-		// if (mediaPlayers[0].muted) {
-		// 	changeButtonType(muteBtn, 'unmute');
-		// }
-		// else {
-		// 	changeButtonType(muteBtn, 'mute');
-		// }
-		// }, false);
-
 		mediaPlayers[i].addEventListener('ended', function() { this.pause(); }, false);
 
 	}
@@ -67,11 +58,8 @@ function togglePlayPause() {
 			mediaPlayers[i].play();
 	  }
 	}
-	// Otherwise it must currently be playing
 	else {
-		// Change the button to be a play button
 		changeButtonType(playPauseBtn, 'play');
-		// Pause the media
 		for(var i=0; i<mediaPlayers.length; i++) {
 			mediaPlayers[i].pause();
 	  }
@@ -85,21 +73,19 @@ function stopPlayer() {
 		mediaPlayers[i].currentTime = 0;
 	}
 }
-//
-// Changes the volume on the media player
-// function changeVolume(direction) {
-// 	if (direction === '+') {
-// 		for(var i=0; i<mediaPlayers.length; i++) {
-// 			mediaPlayers[i].volume += mediaPlayers[i].volume == 1 ? 0 : 0.1;
-// 		}
-// 	}
-// 	else {
-// 		mediaPlayers[i].volume -= (mediaPlayers[i].volume == 0 ? 0 : 0.1);
-// 		mediaPlayers[i].volume = parseFloat(mediaPlayers[i].volume).toFixed(1);
-// 	}
-// }
-//
-// // Toggles the media player's mute and unmute status
+
+function changeVolume(direction) {
+	if (direction === '+') {
+		for(var i=0; i<mediaPlayers[i].length; i++) {
+			mediaPlayers[i].volume += mediaPlayers[i].volume == 1 ? 0 : 0.1;
+		}
+	}
+	else {
+		mediaPlayers[i].volume -= (mediaPlayers[i].volume == 0 ? 0 : 0.1);
+		mediaPlayers[i].volume = parseFloat(mediaPlayers[i].volume).toFixed(1);
+	}
+}
+
 function toggleMute() {
 	if (mediaPlayers[0].muted) {
 		// Change the cutton to be a mute button
