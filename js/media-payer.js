@@ -42,12 +42,12 @@ function initialiseMediaPlayer() {
 		}, false);
 	}
 	// need to work on this one more...how to know it's muted?
-	mediaPlayers[i].addEventListener('volumechange', function(e) {
-		// Update the button to be mute/unmute
-		if (mediaPlayers[i].muted) changeButtonType(muteBtn, 'unmute');
-		else changeButtonType(muteBtn, 'mute');
-	}, false);
-	mediaPlayers[i].addEventListener('ended', function() { this.pause(); }, false);
+	// mediaPlayers[i].addEventListener('volumechange', function(e) {
+	// 	// Update the button to be mute/unmute
+	// 	if (mediaPlayers[i].muted) changeButtonType(muteBtn, 'unmute');
+	// 	else changeButtonType(muteBtn, 'mute');
+	// }, false);
+	// mediaPlayers[i].addEventListener('ended', function() { this.pause(); }, false);
 }
 
 // function togglePlayPause() {
