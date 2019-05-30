@@ -92,20 +92,25 @@ function stopPlayer() {
 // }
 //
 // // Toggles the media player's mute and unmute status
-// function toggleMute() {
-// 	if (mediaPlayer.muted) {
-// 		// Change the cutton to be a mute button
-// 		changeButtonType(muteBtn, 'mute');
-// 		// Unmute the media player
-// 		mediaPlayer.muted = false;
-// 	}
-// 	else {
-// 		// Change the button to be an unmute button
-// 		changeButtonType(muteBtn, 'unmute');
-// 		// Mute the media player
-// 		mediaPlayer.muted = true;
-// 	}
-// }
+function toggleMute() {
+	if (mediaPlayers[0].muted) {
+		// Change the cutton to be a mute button
+		changeButtonType(muteBtn, 'mute');
+		for(var i=0; i<mediaPlayers.length; i++) {
+			mediaPlayers[i].muted = false;
+
+		}
+		// Unmute the media player
+	}
+	else {
+		// Change the button to be an unmute button
+		changeButtonType(muteBtn, 'unmute');
+		for(var i=0; i<mediaPlayers.length; i++) {
+			mediaPlayers[i].muted = true;
+
+		}
+	}
+}
 //
 // // Replays the media currently loaded in the player
 // function replayMedia() {
