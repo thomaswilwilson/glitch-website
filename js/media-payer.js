@@ -50,22 +50,26 @@ function initialiseMediaPlayer() {
 	// mediaPlayers[i].addEventListener('ended', function() { this.pause(); }, false);
 }
 
-// function togglePlayPause() {
-// 	// If the mediaPlayer is currently paused or has ended
-// 	if (mediaPlayer.paused || mediaPlayer.ended) {
-// 		// Change the button to be a pause button
-// 		changeButtonType(playPauseBtn, 'pause');
-// 		// Play the media
-// 		mediaPlayer.play();
-// 	}
-// 	// Otherwise it must currently be playing
-// 	else {
-// 		// Change the button to be a play button
-// 		changeButtonType(playPauseBtn, 'play');
-// 		// Pause the media
-// 		mediaPlayer.pause();
-// 	}
-// }
+function togglePlayPause() {
+	// If the mediaPlayer is currently paused or has ended
+	if (mediaPlayer[0].paused || mediaPlayer[0].ended) {
+		// Change the button to be a pause button
+		changeButtonType(playPauseBtn, 'pause');
+		// Play the media
+		for(var i=0; i<mediaPlayers.length; i++) {
+			mediaPlayer[i].play();
+	  }
+	}
+	// Otherwise it must currently be playing
+	else {
+		// Change the button to be a play button
+		changeButtonType(playPauseBtn, 'play');
+		// Pause the media
+		for(var i=0; i<mediaPlayers.length; i++) {
+			mediaPlayer[i].pause();
+	  }
+	}
+}
 //
 // // Stop the current media from playing, and return it to the start position
 // function stopPlayer() {
