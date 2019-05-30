@@ -24,7 +24,7 @@ function initialiseMediaPlayer() {
 	progressBar = document.getElementById('progress-bar');
 
 	// Hide the browser's default controls
-	for(var i=0; i<mediaPlayers.length; i++) {
+	for(var i=0; i<=mediaPlayers.length; i++) {
     mediaPlayers[i].controls = false;
 		mediaPlayers[i].addEventListener('timeupdate', updateProgressBar, false);
 	}
