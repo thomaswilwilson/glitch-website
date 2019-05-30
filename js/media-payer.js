@@ -111,7 +111,7 @@ function toggleMute() {
 function replayMedia() {
 	resetPlayer();
 	for(var i=0; i<mediaPlayers.length; i++) {
-		mediaPlayer.play();
+		mediaPlayers[i].play();
 	}
 }
 
