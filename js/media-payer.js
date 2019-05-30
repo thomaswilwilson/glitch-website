@@ -151,4 +151,4 @@ function initialiseMediaPlayer() {
 // 	mediaPlayer.currentTime = 0;
 // 	// Ensure that the play pause button is set as 'play'
 // 	changeButtonType(playPauseBtn, 'play');
-// }
+ }
