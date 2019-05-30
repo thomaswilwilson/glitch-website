@@ -32,22 +32,22 @@ function initialiseMediaPlayer() {
 
 
 	// Add a listener for the play and pause events so the buttons state can be updated
-	mediaPlayer[i].addEventListener('play', function() {
+	mediaPlayers[i].addEventListener('play', function() {
 		// Change the button to be a pause button
 		changeButtonType(playPauseBtn, 'pause');
 	}, false);
-	mediaPlayer[i].addEventListener('pause', function() {
+	mediaPlayers[i].addEventListener('pause', function() {
 		// Change the button to be a play button
 		changeButtonType(playPauseBtn, 'play');
 		}, false);
 	}
 	// need to work on this one more...how to know it's muted?
-	mediaPlayer[i].addEventListener('volumechange', function(e) {
+	mediaPlayers[i].addEventListener('volumechange', function(e) {
 		// Update the button to be mute/unmute
-		if (mediaPlayer[i].muted) changeButtonType(muteBtn, 'unmute');
+		if (mediaPlayers[i].muted) changeButtonType(muteBtn, 'unmute');
 		else changeButtonType(muteBtn, 'mute');
 	}, false);
-	mediaPlayer[i].addEventListener('ended', function() { this.pause(); }, false);
+	mediaPlayers[i].addEventListener('ended', function() { this.pause(); }, false);
 }
 
 // function togglePlayPause() {
