@@ -79,12 +79,18 @@ function stopPlayer() {
 	}
 }
 //
-// // Changes the volume on the media player
-// function changeVolume(direction) {
-// 	if (direction === '+') mediaPlayer.volume += mediaPlayer.volume == 1 ? 0 : 0.1;
-// 	else mediaPlayer.volume -= (mediaPlayer.volume == 0 ? 0 : 0.1);
-// 	mediaPlayer.volume = parseFloat(mediaPlayer.volume).toFixed(1);
-// }
+// Changes the volume on the media player
+function changeVolume(direction) {
+	if (direction === '+') {
+		for(var i=0; i<mediaPlayers.length; i++) {
+			mediaPlayers[i].volume += mediaPlayers[i].volume == 1 ? 0 : 0.1;
+		}
+	}
+	else {
+		mediaPlayers[i].volume -= (mediaPlayers[i].volume == 0 ? 0 : 0.1);
+		mediaPlayers[i].volume = parseFloat(mediaPlayers[i].volume).toFixed(1);
+	}
+}
 //
 // // Toggles the media player's mute and unmute status
 // function toggleMute() {
