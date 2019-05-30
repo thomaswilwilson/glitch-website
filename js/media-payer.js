@@ -26,7 +26,7 @@ function initialiseMediaPlayer() {
 	// Hide the browser's default controls
 	for(var i=0; i<mediaPlayers.length; i++) {
     mediaPlayers[i].controls = false;
-		mediaPlayers[i].addEventListener('timeupdate', updateProgressBar, false);
+		// mediaPlayers[i].addEventListener('timeupdate', updateProgressBar, false);
 	}
 
 	// Add a listener for the timeupdate event so we can update the progress bar
