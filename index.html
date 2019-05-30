@@ -7,7 +7,7 @@
   <script src='js/media-payer.js'></script>
 </head>
 <body>
-<h1>YEOEOEOEOOE</h1>
+<h1>Media Art and Design Practice</h1>
 <span>
   <video id='media-video' src='img/cat.mp4' controls>  </video>
   <div id='media-controls'>
@@ -21,17 +21,17 @@
   </div>
 </span>
 
-  <span>
-    <video id='media-video' src='img/cat.mp4' controls>  </video>
-    <div id='media-controls'>
-      <progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
-      <button id='replay-button' class='replay' title='replay' onclick='replayMedia();'>Replay</button>
-      <button id='play-pause-button' class='play' title='play' onclick='togglePlayPause();'>Play</button>
-      <button id='stop-button' class='stop' title='stop' onclick='stopPlayer();'>Stop</button>
-      <button id='volume-inc-button' class='volume-plus' title='increase volume' onclick='changeVolume("+");'>Increase volume</button>
-      <button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Decrease volume</button>
-      <button id='mute-button' class='mute' title='mute' onclick='toggleMute("true");'>Mute</button>
-    </div>
+<span class="video">
+  <video id='media-video' src='img/cat.mp4' controls>  </video>
+  <div id='media-controls'>
+    <progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
+    <button id='replay-button' class='replay' title='replay' onclick='replayMedia();'>Replay</button>
+    <button id='play-pause-button' class='play' title='play' onclick='togglePlayPause();'>Play</button>
+    <button id='stop-button' class='stop' title='stop' onclick='stopPlayer();'>Stop</button>
+    <button id='volume-inc-button' class='volume-plus' title='increase volume' onclick='changeVolume("+");'>Increase volume</button>
+    <button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Decrease volume</button>
+    <button id='mute-button' class='mute' title='mute' onclick='toggleMute("true");'>Mute</button>
+  </div>
 
 </span>
 </body>
