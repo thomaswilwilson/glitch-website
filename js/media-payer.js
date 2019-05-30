@@ -17,7 +17,7 @@ var progressBar;
 
 function initialiseMediaPlayer() {
 	// Get a handle to the player
-	mediaPlayers = document.getElementsByClassName("test");
+	mediaPlayers = document.getElementsByClassName("video");
 	// Get handles to each of the buttons and required elements
 	playPauseBtn = document.getElementById('play-pause-button');
 	muteBtn = document.getElementById('mute-button');
