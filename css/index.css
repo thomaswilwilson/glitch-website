@@ -238,9 +238,9 @@ progress::-moz-progress-bar { background:#2e52a4; }
 
 span.mover {
   width: 100px;
-  height: 100px;
+  /* height: 100px;
   background-color: red;
-  position: relative;
+  position: relative; */
 	-webkit-animation: animation 2800ms linear infinite both;
   animation: animation 2800ms linear infinite both;
 }
