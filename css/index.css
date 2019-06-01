@@ -154,7 +154,7 @@ button {
 	height:16px;
 	border:none;
 	cursor:pointer;
-	background:transparent url('../Wilson_Glitch.png') no-repeat 0 0;
+	background:transparent url('../img/buttons.jpg') no-repeat 0 0;
 }
 
 .demo-1 {
@@ -260,7 +260,7 @@ span.mover {
 	left: calc(-1 * var(--gap-horizontal));
 	width: calc(100% + var(--gap-horizontal) * 2);
 	height: calc(100% + var(--gap-vertical) * 2);
-	background: url(../img/glitch.jpg) no-repeat 50% 0;
+	background: url(../Wilson_Glitch) no-repeat 50% 0;
 	background-color: var(--blend-color-1);
 	background-size: cover;
 	transform: translate3d(0,0,0);
