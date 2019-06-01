@@ -236,14 +236,14 @@ progress::-moz-progress-bar { background:#2e52a4; }
 	z-index:999;
 }
 
-span.mover {
-  width: 100px;
+/* span.mover {
+  /* width: 100px; */
   /* height: 100px;
   background-color: red;
   position: relative; */
-	-webkit-animation: animation 2800ms linear infinite both;
+	/* -webkit-animation: animation 2800ms linear infinite both;
   animation: animation 2800ms linear infinite both;
-}
+} */
 
 .glitch {
 	position: absolute;
@@ -580,7 +580,8 @@ span.mover {
 
 
 
-.animation-target {
+.span {
+	position: relative;
   -webkit-animation: animation 2800ms linear infinite both;
   animation: animation 2800ms linear infinite both;
 }
