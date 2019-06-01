@@ -34,8 +34,8 @@ button {
 	--color-link: #f9d77e;
 	--color-link-hover: #fff;
 	--color-info: #efc453;
-	--glitch-width: 100vw;
-	--glitch-height: 100vh;
+	--glitch-width: screen.width;
+	--glitch-height: screen.height;
 	--gap-horizontal: 10px;
 	--gap-vertical: 5px;
 	--time-anim: 4s;
