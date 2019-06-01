@@ -154,7 +154,7 @@ button {
 	height:16px;
 	border:none;
 	cursor:pointer;
-	background:transparent url('../img/buttons.jpg') no-repeat 0 0;
+	background:transparent url(../img/buttons.jpg) no-repeat 0 0;
 }
 
 .demo-1 {
