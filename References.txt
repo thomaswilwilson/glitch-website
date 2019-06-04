@@ -1,0 +1,5 @@
+Media PLayerDeveloped by Ian Devlin in an issue of Net Magazine: https://www.creativebloq.com/html5/build-custom-html5-video-player-9134473
+
+Background css glitch effect found at https://tympanus.net/Tutorials/CSSGlitchEffect/
+
+Media Player animation developed at glitch.js
