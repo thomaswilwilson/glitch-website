@@ -13,18 +13,14 @@ document.addEventListener("DOMContentLoaded", function() { initialiseMediaPlayer
 var mediaPlayers;
 var playPauseBtn;
 var muteBtn;
-var progressBar;
 
 function initialiseMediaPlayer() {
 	mediaPlayers = document.getElementsByClassName("video");
 	playPauseBtn = document.getElementById('play-pause-button');
 	muteBtn = document.getElementById('mute-button');
-	progressBar = document.getElementById('progress-bar');
 	for(var i=0; i<mediaPlayers.length; i++) {
 
     mediaPlayers[i].controls = false;
-
-		mediaPlayers[i].addEventListener('timeupdate', updateProgressBar, false);
 
 		mediaPlayers[i].addEventListener('play', function() {
 		changeButtonType(playPauseBtn, 'pause');
@@ -115,50 +111,16 @@ function replayMedia() {
 	}
 }
 
-function updateProgressBar() {
-	// Work out how much of the media has played via the duration and currentTime parameters
-	var percentage = Math.floor((100 / mediaPlayers[0].duration) * mediaPlayers[0].currentTime);
-	// Update the progress bar's value
-	progressBar.value = percentage;
-	// Update the progress bar's text (for browsers that don't support the progress element)
-	progressBar.innerHTML = percentage + '% played';
-}
-//
-// // Updates a button's title, innerHTML and CSS class to a certain value
 function changeButtonType(btn, value) {
 	btn.title = value;
 	btn.innerHTML = value;
 	btn.className = value;
 }
-//
-// // Loads a video item into the media player
-// function loadVideo() {
-// 	for (var i = 0; i < arguments.length; i++) {
-// 		var file = arguments[i].split('.');
-// 		var ext = file[file.length - 1];
-// 		// Check if this media can be played
-// 		if (canPlayVideo(ext)) {
-// 			// Reset the player, change the source file and load it
-// 			resetPlayer();
-// 			mediaPlayer.src = arguments[i];
-// 			mediaPlayer.load();
-// 			break;
-// 		}
-// 	}
-// }
-//
-// // Checks if the browser can play this particular type of file or not
-// function canPlayVideo(ext) {
-// 	var ableToPlay = mediaPlayer.canPlayType('video/' + ext);
-// 	if (ableToPlay == '') return false;
-// 	else return true;
-// }
-//
+
 function resetPlayer() {
 	for(var i=0; i<mediaPlayers.length; i++) {
 		mediaPlayers[i].currentTime = 0;
 	}
-	progressBar.value = 0;
 	changeButtonType(playPauseBtn, 'play');
  }
 
